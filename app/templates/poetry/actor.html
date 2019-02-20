@@ -1,0 +1,244 @@
+{% import "./poetry/_macros.html" as macros %}
+<!DOCTYPE html>
+<html class="desktop landscape"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>作者(诗人)大全(13033位)_诗词名句网</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{{url_for('static',filename='static/css/layui.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='static/css/www_v2.css')}}">
+    <script src="{{url_for('static', filename='static/jquery-3.2.1/jquery-3.2.1.js')}}"></script>
+    <script src="{{url_for('static',filename='static/js/selection.js')}}"></script>
+    <!--<link rel="stylesheet" href="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/font_576092_m2icqcebp7evzpvi.css">-->
+
+<link id="layuicss-layer" rel="stylesheet" href="{{url_for('static',filename='static/css/layer.css')}}" media="all">
+
+
+
+</head>
+<body>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+<script src="{{url_for('static',filename='static/js/html5.min.js')}}"></script>
+<script src="{{url_for('static',filename='static/js/respond.min.js')}}"></script>
+<![endif]-->
+
+<div class="www-main-bg www-shadow-bottom" id="header" style="top: 0px;">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 layui-col-sm4">
+                <a href="http://www.shicimingju.com/"><img src="{{url_for('static',filename='static/pics/logo.png')}}" style="border: 0;"></a>
+            </div>
+            <form action="/chaxun/search" method="get" id="search_form">
+            <div class="layui-col-md5 layui-col-sm5 www-search-input-container">
+                <div class="search-tab-top">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="search-tab-current" data-cate="all">综合</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="zz_list">作者</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="title">标题</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="shiju">诗句</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="first">句首</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="end">句尾</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="book">古籍</a> </li>
+                        <li><a href="javascript:void(0)" data-cate="chengyu">成语</a> </li>
+                    </ul>
+                </div>
+                <div class="www-search-input-container-input" id="search_input_container">
+                    <img src="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/web_search.png" class="www-icon">
+                    <input type="text" name="kw" id="search_input" placeholder="(作者+空格+关键词)查询指定作者的结果" autocomplete="off">
+                    <a href="javascript:void(0)" class="www-a-icon"><img src="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/www_close.png" class="www-icon www-visibility-hidden" id="clear_input"></a>
+                    <div class="result-card" style="width: 420px; display: block;">
+                        <!--<ul><li><a href="/chaxun/zuozhe/209.html" class="">[清] <strong>向阮贤</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/281.html" class="">[先秦] <strong>先秦无名</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/336.html" class="selected">[汉] <strong>项羽</strong><span>作者</span></a></li><li><a href="/chaxun/list/799917.html" data-scid="799917"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27832.html" data-scid="27832"><strong>《相见欢·林花谢了春红》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27840.html" data-scid="27840"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="相见时难别亦难" class="highlight-link2"><strong>相见时难别亦难</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="晓镜但愁云鬓改" class="highlight-link2"><strong>晓镜但愁云鬓改</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/7405.html" data-scid="7405" data-shiju="夏康娱以自纵" class="highlight-link2"><strong>夏康娱以自纵</strong>屈原 《离骚》<span>诗句</span></a></li></ul>-->
+
+                    </div>
+                    <div class="sub-result-card" style="width: 210px; left: 420px;">
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="layui-row www-nav" id="top_nav">
+            <div class="">
+                <ul class="www-search-nav-ul">
+                    <li><a href="http://www.shicimingju.com/" class="">主页</a> </li>
+                    <li class="nav-xiala-father">
+                        <a href="javascript:void(0)" class="www-selected">作者</a>
+                        <div class="nav-xiala www-shadow-card">
+                            <ul>
+                                <li><a href="http://www.shicimingju.com/category/all">作者大全</a></li>
+                                <li><a href="http://www.shicimingju.com/hecheng/index.html">作者合称</a></li>
+                                <li><a href="http://www.shicimingju.com/hecheng/chenghao.html">作者称号</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-xiala-father">
+                        <a href="javascript:void(0)" class="">诗词</a>
+                        <div class="nav-xiala www-shadow-card">
+                            <ul>
+                                <li><a href="http://www.shicimingju.com/shicimark">诗词分类</a></li>
+                                <li><a href="http://www.shicimingju.com/chaxun/index.html">热门查询</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li><a href="http://www.shicimingju.com/cipai/index.html" class="">词牌名</a> </li>
+                    <li class="nav-xiala-father">
+                        <a href="http://www.shicimingju.com/book/" class="">史书典籍</a>
+                        <div class="nav-xiala www-shadow-card">
+                            <ul>
+                                <li><a href="http://www.shicimingju.com/bookmark/sishu.html">四书</a></li>
+                                <li><a href="http://www.shicimingju.com/bookmark/wujing.html">五经</a></li>
+                                <li><a href="http://www.shicimingju.com/bookmark/yanyixiaoshuo.html">演义小说</a></li>
+                                <li><a href="http://www.shicimingju.com/bookmark/sidamingzhu.html">四大名著</a></li>
+                                <li><a href="http://www.shicimingju.com/bookmark/ershisishi.html">二十四史</a></li>
+                                <li><a href="http://www.shicimingju.com/book/">全部</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-xiala-father"><a href="javascript:void(0)" class="">其他</a>
+                        <div class="nav-xiala www-shadow-card">
+                            <ul>
+                                <li><a href="http://www.shicimingju.com/category/story">诗人故事</a></li>
+                                <li><a href="http://www.shicimingju.com/cangtoushi/index.html">藏头诗制作</a></li>
+                                <li><a href="http://www.shicimingju.com/category/xiehouyu">歇后语</a></li>
+                                <li><a href="http://www.shicimingju.com/category/miyu">谜语</a></li>
+                                <li><a href="http://www.shicimingju.com/category/duilian">对联</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="search_result">-->
+    <!--<div class="layui-container">-->
+        <!--<div class="layui-row">-->
+            <!--<div class="layui-col-md5 layui-col-sm5 layui-col-md-offset3 layui-col-sm-offset4 result-card">-->
+
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</div>-->
+<div style="clear: both"></div>
+<div class="main-adjust"></div>
+
+<div class="layui-container">
+<div class="nav-top"><a href="http://www.shicimingju.com/">主页</a><span class="nav-arrow"></span><a href="http://www.shicimingju.com/category/all">作者大全</a></div><div class="layui-row layui-col-space10">
+    <div class="layui-col-md8 layui-col-sm7">
+        <div class="www-shadow-card www-main-container">
+
+            <h1>作者大全 <span class="new-window"><input type="checkbox" id="newWindow"> <label for="newWindow">新窗口打开</label></span></h1>
+            <div class="filter-container">
+                <a onclick="new_load1(this)" {% if data_put == "全部" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">全部</a>
+                <a onclick="new_load1(this)" {% if data_put == "先秦" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">先秦</a>
+                <a onclick="new_load1(this)" {% if data_put == "秦" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">秦</a>
+                <a onclick="new_load1(this)" {% if data_put == "汉" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">汉</a>
+                <a onclick="new_load1(this)" {% if data_put == "魏晋" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">魏晋</a>
+                <a onclick="new_load1(this)" {% if data_put == "南北朝" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">南北朝</a>
+                <a onclick="new_load1(this)" {% if data_put == "隋" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">隋</a>
+                <a onclick="new_load1(this)" {% if data_put == "唐" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">唐</a>
+                <a onclick="new_load1(this)" {% if data_put == "宋" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">宋</a>
+                <a onclick="new_load1(this)" {% if data_put == "辽" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">辽</a>
+
+                <a onclick="new_load1(this)" {% if data_put == "金" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">金</a>
+                <a onclick="new_load1(this)" {% if data_put == "元" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">元</a>
+                <a onclick="new_load1(this)" {% if data_put == "明" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">明</a>
+
+                <a onclick="new_load1(this)" {% if data_put == "清" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">清</a>
+                <a onclick="new_load1(this)" {% if data_put == "近代" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">近代</a>
+                <a onclick="new_load1(this)" {% if data_put == "现代" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">现代</a>
+                <a onclick="new_load1(this)" {% if data_put == "当代" %} class="actortime current-niandai" {% else %} class="" {% endif %}class="">当代</a>
+
+
+
+            </div>
+{#            <div class="filter-container">#}
+{#                <a href="http://www.shicimingju.com/category/all" class="current-niandai">全部</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_A" class="">A</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_B" class="">B</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_C" class="">C</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_D" class="">D</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_E" class="">E</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_F" class="">F</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_G" class="">G</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_H" class="">H</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_I" class="">I</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_J" class="">J</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_K" class="">K</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_L" class="">L</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_M" class="">M</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_N" class="">N</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_O" class="">O</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_P" class="">P</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_Q" class="">Q</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_R" class="">R</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_S" class="">S</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_T" class="">T</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_U" class="">U</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_V" class="">V</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_W" class="">W</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_X" class="">X</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_Y" class="">Y</a>#}
+{#                <a href="http://www.shicimingju.com/category/all_Z" class="">Z</a>#}
+{#            </div>#}
+
+            <div class="num-info">查找到一共{{ listsize }}位诗人</div>
+            <div class="line2"></div>
+            {% for actor in posts %}
+                <h3>{{actor.id}}、[{{actor.actor_time}}] <a href="{{ url_for('poetry.actorlist',actor_id=actor.id) }}">{{actor.actor_name}}</a></h3>
+                <div class="summary">
+                    {% if actor.actor_img %}
+                        <img src="{{actor.actor_img}}">
+                    {% endif %}
+
+                    {{actor.actor_introduction[0:55]+"..."|safe}}
+                </div>
+                <div class="line3"></div>
+            {% endfor %}
+
+
+
+
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="pagination www-shadow-card">
+
+            {% if pagination %}
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, '.actor_page') }}
+            </div>
+            {% endif %}
+            <!--<span>1</span>-->
+            <!--<a href="http://www.shicimingju.com/category/all__2"><span>2</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__3"><span>3</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__4"><span>4</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__5"><span>5</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__6"><span>6</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__7"><span>7</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__8"><span>8</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__9"><span>9</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__10"><span>10</span></a>-->
+            <!--<a href="http://www.shicimingju.com/category/all__2"><span>下一页</span></a>-->
+        </div>
+
+    </div>
+
+    <!--<a href="https://s.click.taobao.com/MroNMKw" target="_blank"><img src="/public/image/ddd/pctb.jpg" style="width: 100%;"></a>-->
+</div>    </div>
+</div>
+
+
+</div>
+
+<script src="{{url_for('static',filename='static/js/layui.js')}}"></script>
+<script src="{{url_for('static',filename='static/js/www_v2_1.js')}}"></script>
+<a href="javascript:void(0)" id="totop"><div class="totop"><i class="iconfont icon-up"></i></div></a>
+<footer class="layui-fluid footer">
+    Copyright © 2010-2018 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备09063030号-2</a> 邮箱：service@shicimingju.com
+</footer>
+
+</body></html>
