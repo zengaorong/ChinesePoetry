@@ -152,7 +152,7 @@
 
             {% if pagination %}
                 <div class="pagination">
-                    {{ macros.pagination_widget(pagination, 'poetry.actorlist') }}
+                    {{ macros.pagination_widget(pagination, 'poetry.actorlist',actor_id=actor_id) }}
                 </div>
             {% endif %}
         </div>
