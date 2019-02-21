@@ -143,7 +143,7 @@ layui.use(['form','jquery','carousel'],function () {
                 }
 
                 var zz = toRed(kw,item.zuozhe);
-                result +='<li><a href="/chaxun/zuozhe/'+item.id+'.html">['+item.niandai+'] <strong>'+zz+'</strong><span>作者</span></a></li>';
+                result +='<li><a href="/poetry/actorlist/'+item.id+'">['+item.niandai+'] <strong>'+zz+'</strong><span>作者</span></a></li>';
                 searchMaxResult++;
             }
         }
@@ -152,7 +152,7 @@ layui.use(['form','jquery','carousel'],function () {
             for(var i in shicis){
                 var item = shicis[i];
                 var title = toRed(kw,item.title);
-                result +='<li><a href="/chaxun/list/'+item.scid+'.html" data-scid="'+item.scid+'"><strong>《'+title+'》</strong>['+item.niandai+'] '+item.zuozhe+'<span>标题</span></a></li>';
+                result +='<li><a href="/poetry/chaptershow/'+item.scid+'" data-scid="'+item.scid+'"><strong>《'+title+'》</strong>['+item.niandai+'] '+item.zuozhe+'<span>标题</span></a></li>';
                 searchMaxResult++;
             }
             total = res.titles.total;
@@ -164,7 +164,7 @@ layui.use(['form','jquery','carousel'],function () {
 
                 var shiju = toRed(kw,item.shiju);
 
-                result += '<li><a href="/chaxun/list/'+item.scid+'.html" data-scid="'+item.scid+'" data-shiju="'+item.shiju+'" class="highlight-link2"><strong>'+shiju+'</strong>'+item.zuozhe+' 《'+item.title+'》'+'<span>诗句</span></a></li>';
+                result += '<li><a href="/poetry/chaptershow/'+item.scid+'" data-scid="'+item.scid+'" data-shiju="'+item.shiju+'" class="highlight-link2"><strong>'+shiju+'</strong>'+item.zuozhe+' 《'+item.title+'》'+'<span>诗句</span></a></li>';
 
                 searchMaxResult++;
             }
@@ -426,7 +426,7 @@ layui.use(['form','jquery','carousel'],function () {
                 }else{
                     $.ajax({
                         method:'GET',
-                        url:'/webApi/itemContent?scid='+scid,
+                        url:'/poetry/api/itemContent?scid='+scid,
                         cache:true,
                         success:function (res){
                             if(subAjaxScid != scid)return;

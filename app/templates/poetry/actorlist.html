@@ -133,11 +133,10 @@
         <div class="www-shadow-card www-main-container">
             <h1>「{{ actors.actor_name }}」诗词全集({{ actors.actor_poetry_num }}首)<span class="new-window"><input type="checkbox" id="newWindow" checked="checked"> <label for="newWindow">新窗口打开</label></span></h1>
             <div class="line2"></div>
-
             {% for post in posts %}
-                <h3>1、<a href="{{ url_for('poetry.chaptershow',chapter_id=post.chapter_id) }}"target="_blank">《{{ post.chapter_shici_title }}》</a></h3>
+                <h3>{{ loop.index }}、<a href="{{ url_for('poetry.chaptershow',chapter_id=post.chapter_id) }}"target="_blank">《{{ post.chapter_shici_title }}》</a></h3>
                 <div class="summary">
-                    {{ post.chapter_shici_content }}
+                    {{ post.chapter_shici_content[0:70]}}
                 </div>
                 <div class="line3"></div>
             {% endfor %}

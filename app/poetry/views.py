@@ -40,11 +40,37 @@ def actorlist(actor_id):
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
+
+    chapter_list = []
+    for key in posts:
+        myachapter = chapter()
+        myachapter.chapter_id = key.chapter_id
+        myachapter.chapter_shici_title = key.chapter_shici_title
+        myachapter.chapter_shici_content = key.chapter_shici_content
+
+
+        soup = BeautifulSoup(myachapter.chapter_shici_content.replace("\n",""),"html.parser")
+        soup_data = soup.find("div",{"class":"shici-content"})
+        out_string = ""
+        for key in soup_data.contents:
+
+            if key.name == "br":
+                pass
+            else:
+                if key.string == None:
+                    continue
+                out_string = out_string + key.string
+
+        print out_string
+        myachapter.chapter_shici_content = out_string
+        chapter_list.append(myachapter)
+
+
     listsize = pagination.total
 
     actors = actor1.query.filter_by(id=int(actor_id)).first()
 
-    return render_template("poetry/actorlist.html",posts=posts,actors=actors,pagination=pagination,listsize=listsize,actor_id=actor_id)
+    return render_template("poetry/actorlist.html",posts=chapter_list,actors=actors,pagination=pagination,listsize=listsize,actor_id=actor_id)
 
 
 @poetry.route('/chaptershow/<chapter_id>', methods=['GET', 'POST'])

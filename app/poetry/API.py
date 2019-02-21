@@ -23,3 +23,13 @@ def ajaxSearch():
     data = {"kw":kw,"cate":cate,"position":position}
     respons = requests.post(url,data=data,headers=header)
     return jsonify(respons.json())
+
+
+@poetry.route('/api/itemContent', methods=['GET', 'POST'])
+def itemContent():
+    scid = request.args.get('scid')
+    url = "http://www.shicimingju.com/webApi/itemContent?scid=%s"%scid
+    print url
+    respons = requests.get(url)
+    print respons.text
+    return jsonify(respons.json())
