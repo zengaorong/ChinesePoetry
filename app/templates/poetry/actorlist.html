@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='static/css/www_v2.css')}}">
     <script src="{{url_for('static', filename='static/jquery-3.2.1/jquery-3.2.1.js')}}"></script>
     <script src="{{url_for('static',filename='static/js/selection.js')}}"></script>
-    <!--<link rel="stylesheet" href="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/font_576092_m2icqcebp7evzpvi.css">-->
+    <link rel="stylesheet" href="{{url_for('static',filename='static/css/font_576092_m2icqcebp7evzpvi.css')}}">
 
 <link id="layuicss-layer" rel="stylesheet" href="{{url_for('static',filename='static/css/layer.css')}}" media="all">
 
@@ -31,81 +31,74 @@
                 <a href="http://www.shicimingju.com/"><img src="{{url_for('static',filename='static/pics/logo.png')}}" style="border: 0;"></a>
             </div>
             <form action="/chaxun/search" method="get" id="search_form">
-            <div class="layui-col-md5 layui-col-sm5 www-search-input-container">
-                <div class="search-tab-top">
-                    <ul>
-                        <li><a href="javascript:void(0)" class="search-tab-current" data-cate="all">综合</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="zz_list">作者</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="title">标题</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="shiju">诗句</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="first">句首</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="end">句尾</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="book">古籍</a> </li>
-                        <li><a href="javascript:void(0)" data-cate="chengyu">成语</a> </li>
-                    </ul>
-                </div>
-                <div class="www-search-input-container-input" id="search_input_container">
-                    <img src="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/web_search.png" class="www-icon">
-                    <input type="text" name="kw" id="search_input" placeholder="(作者+空格+关键词)查询指定作者的结果" autocomplete="off">
-                    <a href="javascript:void(0)" class="www-a-icon"><img src="%E4%BD%9C%E8%80%85(%E8%AF%97%E4%BA%BA)%E5%A4%A7%E5%85%A8(13033%E4%BD%8D)_%E8%AF%97%E8%AF%8D%E5%90%8D%E5%8F%A5%E7%BD%91_files/www_close.png" class="www-icon www-visibility-hidden" id="clear_input"></a>
-                    <div class="result-card" style="width: 420px; display: block;">
-                        <!--<ul><li><a href="/chaxun/zuozhe/209.html" class="">[清] <strong>向阮贤</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/281.html" class="">[先秦] <strong>先秦无名</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/336.html" class="selected">[汉] <strong>项羽</strong><span>作者</span></a></li><li><a href="/chaxun/list/799917.html" data-scid="799917"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27832.html" data-scid="27832"><strong>《相见欢·林花谢了春红》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27840.html" data-scid="27840"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="相见时难别亦难" class="highlight-link2"><strong>相见时难别亦难</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="晓镜但愁云鬓改" class="highlight-link2"><strong>晓镜但愁云鬓改</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/7405.html" data-scid="7405" data-shiju="夏康娱以自纵" class="highlight-link2"><strong>夏康娱以自纵</strong>屈原 《离骚》<span>诗句</span></a></li></ul>-->
+                <div class="layui-col-md5 layui-col-sm5 www-search-input-container">
+                    <div class="search-tab-top">
+                        <ul>
+                            <li><a href="javascript:void(0)" class="search-tab-current" data-cate="all">综合</a> </li>
+                            <li><a href="javascript:void(0)" data-cate="zz_list">作者</a> </li>
+                            <li><a href="javascript:void(0)" data-cate="title">标题</a> </li>
+                            <li><a href="javascript:void(0)" data-cate="shiju">诗句</a> </li>
+                            <li><a href="javascript:void(0)" data-cate="first">句首</a> </li>
+                            <li><a href="javascript:void(0)" data-cate="end">句尾</a> </li>
+                            {#                        <li><a href="javascript:void(0)" data-cate="book">古籍</a> </li>#}
+                            {#                        <li><a href="javascript:void(0)" data-cate="chengyu">成语</a> </li>#}
+                        </ul>
+                    </div>
+                    <div class="www-search-input-container-input" id="search_input_container">
+                        <img src="{{ url_for('static',filename = 'static/pics/web_search.png') }}" class="www-icon">
+                        <input type="text" name="kw" id="search_input" placeholder="(作者+空格+关键词)查询指定作者的结果" autocomplete="off">
+                        <a href="javascript:void(0)" class="www-a-icon"><img src="{{ url_for('static',filename = 'static/pics/www_close.png') }}" class="www-icon www-visibility-hidden" id="clear_input"></a>
+                        <div class="result-card" style="width: 420px; display: block;">
+                            <!--<ul><li><a href="/chaxun/zuozhe/209.html" class="">[清] <strong>向阮贤</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/281.html" class="">[先秦] <strong>先秦无名</strong><span>作者</span></a></li><li><a href="/chaxun/zuozhe/336.html" class="selected">[汉] <strong>项羽</strong><span>作者</span></a></li><li><a href="/chaxun/list/799917.html" data-scid="799917"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27832.html" data-scid="27832"><strong>《相见欢·林花谢了春红》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/27840.html" data-scid="27840"><strong>《相见欢·无言独上西楼》</strong>[唐] 李煜<span>标题</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="相见时难别亦难" class="highlight-link2"><strong>相见时难别亦难</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/4868.html" data-scid="4868" data-shiju="晓镜但愁云鬓改" class="highlight-link2"><strong>晓镜但愁云鬓改</strong>李商隐 《无题》<span>诗句</span></a></li><li><a href="/chaxun/list/7405.html" data-scid="7405" data-shiju="夏康娱以自纵" class="highlight-link2"><strong>夏康娱以自纵</strong>屈原 《离骚》<span>诗句</span></a></li></ul>-->
 
-                    </div>
-                    <div class="sub-result-card" style="width: 210px; left: 420px;">
+                        </div>
+                        <div class="sub-result-card" style="width: 210px; left: 420px;">
+                        </div>
                     </div>
                 </div>
-            </div>
             </form>
         </div>
         <div class="layui-row www-nav" id="top_nav">
             <div class="">
                 <ul class="www-search-nav-ul">
-                    <li><a href="http://www.shicimingju.com/" class="">主页</a> </li>
+                    <li><a href="/poetry/actor" class="">主页</a> </li>
                     <li class="nav-xiala-father">
-                        <a href="javascript:void(0)" class="www-selected">作者</a>
-                        <div class="nav-xiala www-shadow-card">
-                            <ul>
-                                <li><a href="http://www.shicimingju.com/category/all">作者大全</a></li>
-                                <li><a href="http://www.shicimingju.com/hecheng/index.html">作者合称</a></li>
-                                <li><a href="http://www.shicimingju.com/hecheng/chenghao.html">作者称号</a> </li>
-                            </ul>
-                        </div>
+                        <a href="javascript:void(0)" class="">作者</a>
                     </li>
                     <li class="nav-xiala-father">
                         <a href="javascript:void(0)" class="">诗词</a>
-                        <div class="nav-xiala www-shadow-card">
-                            <ul>
-                                <li><a href="http://www.shicimingju.com/shicimark">诗词分类</a></li>
-                                <li><a href="http://www.shicimingju.com/chaxun/index.html">热门查询</a></li>
-                            </ul>
-                        </div>
+                        {#                        <div class="nav-xiala www-shadow-card">#}
+                        {#                            <ul>#}
+                        {#                                <li><a href="http://www.shicimingju.com/shicimark">诗词分类</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/chaxun/index.html">热门查询</a></li>#}
+                        {#                            </ul>#}
+                        {#                        </div>#}
 
                     </li>
-                    <li><a href="http://www.shicimingju.com/cipai/index.html" class="">词牌名</a> </li>
+                    <li><a href="javascript:void(0)" class="">词牌名</a> </li>
                     <li class="nav-xiala-father">
-                        <a href="http://www.shicimingju.com/book/" class="">史书典籍</a>
-                        <div class="nav-xiala www-shadow-card">
-                            <ul>
-                                <li><a href="http://www.shicimingju.com/bookmark/sishu.html">四书</a></li>
-                                <li><a href="http://www.shicimingju.com/bookmark/wujing.html">五经</a></li>
-                                <li><a href="http://www.shicimingju.com/bookmark/yanyixiaoshuo.html">演义小说</a></li>
-                                <li><a href="http://www.shicimingju.com/bookmark/sidamingzhu.html">四大名著</a></li>
-                                <li><a href="http://www.shicimingju.com/bookmark/ershisishi.html">二十四史</a></li>
-                                <li><a href="http://www.shicimingju.com/book/">全部</a></li>
-                            </ul>
-                        </div>
+                        <a href="javascript:void(0)" class="">史书典籍</a>
+                        {#                        <div class="nav-xiala www-shadow-card">#}
+                        {#                            <ul>#}
+                        {#                                <li><a href="http://www.shicimingju.com/bookmark/sishu.html">四书</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/bookmark/wujing.html">五经</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/bookmark/yanyixiaoshuo.html">演义小说</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/bookmark/sidamingzhu.html">四大名著</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/bookmark/ershisishi.html">二十四史</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/book/">全部</a></li>#}
+                        {#                            </ul>#}
+                        {#                        </div>#}
                     </li>
                     <li class="nav-xiala-father"><a href="javascript:void(0)" class="">其他</a>
-                        <div class="nav-xiala www-shadow-card">
-                            <ul>
-                                <li><a href="http://www.shicimingju.com/category/story">诗人故事</a></li>
-                                <li><a href="http://www.shicimingju.com/cangtoushi/index.html">藏头诗制作</a></li>
-                                <li><a href="http://www.shicimingju.com/category/xiehouyu">歇后语</a></li>
-                                <li><a href="http://www.shicimingju.com/category/miyu">谜语</a></li>
-                                <li><a href="http://www.shicimingju.com/category/duilian">对联</a></li>
-                            </ul>
-                        </div>
+                        {#                        <div class="nav-xiala www-shadow-card">#}
+                        {#                            <ul>#}
+                        {#                                <li><a href="http://www.shicimingju.com/category/story">诗人故事</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/cangtoushi/index.html">藏头诗制作</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/category/xiehouyu">歇后语</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/category/miyu">谜语</a></li>#}
+                        {#                                <li><a href="http://www.shicimingju.com/category/duilian">对联</a></li>#}
+                        {#                            </ul>#}
+                        {#                        </div>#}
                     </li>
                 </ul>
             </div>
@@ -126,10 +119,8 @@
 <div class="main-adjust"></div>
 
 <div class="layui-container">
-<div class="nav-top"><a href="http://www.shicimingju.com/">主页</a><span class="nav-arrow"></span><a href="http://www.shicimingju.com/category/all">作者大全</a></div><div class="layui-row layui-col-space10">
+<div class="nav-top"><a href="/poetry/actor">主页</a><span class="nav-arrow"></span><a href="/poetry/actor">作者大全</a><span class="nav-arrow"></span><a href="/poetry/actorlist/{{ actors.id }}">{{ actors.actor_name }}</a></div><div class="layui-row layui-col-space10">
     <div class="layui-col-md8 layui-col-sm7">
-
-
         <div class="www-shadow-card www-main-container">
             <h1>「{{ actors.actor_name }}」诗词全集({{ actors.actor_poetry_num }}首)<span class="new-window"><input type="checkbox" id="newWindow" checked="checked"> <label for="newWindow">新窗口打开</label></span></h1>
             <div class="line2"></div>

@@ -568,7 +568,7 @@ em{
     width: 14px;
     padding: 0;
     margin: 0;
-    background-image: url("/public/image/ic_right.png");
+    background-image: url("../pics/ic_right.png");
     background-repeat:no-repeat;
     background-size:  contain;
 }
